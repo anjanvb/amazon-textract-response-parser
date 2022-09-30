@@ -473,8 +473,8 @@ class TDocument():
         """atm no way to get back from Block to list of other blocks, hence get_block_by_id is only available on document level and quite some processing has to be here"""
         if not page:
             raise ValueError("need a page to rotate")
-        if not degrees:
-            raise ValueError("need degrees to rotate")
+        # if not degrees:
+        #     raise ValueError("need degrees to rotate")
         [b.rotate(origin=origin, degrees=float(degrees)) for b in self.relationships_recursive(block=page)]
         self.relationships_recursive.cache_clear()
 
